@@ -1,19 +1,25 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-  const location = useLocation();
-  const query = new URLSearchParams(location.search);
+
+  const query = new URLSearchParams(window.location.search);
   const token = query.get('token');
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/'); // Redirect to login page
+  };
+
   return (
-    <div className="Dashboard">
-      <h1>Login Success</h1>
-      {token ? (
-        <p>Token: {token}</p>
+    <div className="center-container">
+      {(token) ? (
+        <><h1>Login Success</h1><p>Token: {token}</p></>
       ) : (
-        <p>No token found. Please try logging in again.</p>
+        <><h1>You are not logged in yet.</h1><p>Token: {token}</p></>
       )}
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };

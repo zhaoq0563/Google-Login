@@ -1,7 +1,9 @@
 import React from 'react';
+import './MainPage.css';
 import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
+
   const navigate = useNavigate();
 
   const redirectToGoogleLogin = () => {
@@ -11,10 +13,23 @@ const MainPage = () => {
     window.location.href = googleLoginUrl;
   };
 
+  const handleDashboard = () => {
+    navigate('/dashboard');
+  };
+
   return (
-    <div className="MainPage">
+    <div className="center-container">
       <h1>Welcome to My App</h1>
-      <button onClick={redirectToGoogleLogin}>Login with Google</button>
+        <button className="google-btn" onClick={redirectToGoogleLogin}>
+            <img
+                className="google-icon"
+                src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg"
+                alt="Google Icon"
+            />
+            <span className="btn-text">Google</span>
+        </button>
+        <p></p>
+        <button onClick={handleDashboard}>Dashboard</button>
     </div>
   );
 };
