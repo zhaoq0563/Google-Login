@@ -1,8 +1,8 @@
 import React from 'react';
-import './MainPage.css';
+import './GoogleButton.css';
 import { useNavigate } from 'react-router-dom';
 
-const MainPage = () => {
+const ServerSide = () => {
 
   const navigate = useNavigate();
 
@@ -34,4 +34,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default ServerSide;

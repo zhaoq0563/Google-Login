@@ -1,5 +1,6 @@
 import React from "react";
 import CryptoJS from "crypto-js";
+import "./GoogleButton.css";
 
 // Helper function to generate a random string (code verifier + state)
 const generateRandomString = (length) => {
@@ -42,8 +43,13 @@ const Hybrid = () => {
     };
 
     return (
-        <button onClick={redirectToGoogleLogin}>
-            Login with Google
+        <button className="google-btn" onClick={redirectToGoogleLogin}>
+            <img
+                className="google-icon"
+                src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg"
+                alt="Google Icon"
+            />
+            <span className="btn-text">Google</span>
         </button>
     );
 };
