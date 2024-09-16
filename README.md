@@ -2,7 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is particularly used to test the Google Login OAuth2.0 server-side flow implementation.
+This project is particularly used to test the Google Login OAuth2.0 server-side flow and hybrid flow implementation.
+
+## Code Structure
+
+### ServerSide.js
+Google login button page for server-side flow implementation
+
+### Hybrid.js
+Google login button page for the hybrid flow implementation
+
+### GoogleAuthCallback.js
+The callback page to handle the response from the Google authentication
+
+### Dashboard.js
+Simple successful login page to show the token received from the BE API call in GoogleAuthCallback.js
+
+### GoogleButton.css
+Google login button css file.
 
 ## Available Scripts
 
