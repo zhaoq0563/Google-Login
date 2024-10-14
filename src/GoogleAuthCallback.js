@@ -74,7 +74,7 @@ const GoogleAuthCallback = () => {
 
             try {
                 const user = { codeVerifier: codeVerifier, authorizationCode: authorizationCode };
-                const response = await axios.post('http://localhost:8080/api/common/oauth-handle-authResponse-login', user);
+                const response = await axios.post('http://localhost:8080/api/user/oauth-handle-authResponse-login', user);
 
                 console.log('JWT Token:', response.data.token);
                 console.log('User key:', response.data.userKey);
