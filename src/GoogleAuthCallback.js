@@ -74,13 +74,14 @@ const GoogleAuthCallback = () => {
 
             try {
                 const user = { codeVerifier: codeVerifier, authorizationCode: authorizationCode };
-                const response = await axios.post('http://localhost:8080/api/user/oauth-handle-authResponse-login', user);
+                const response = await axios.post('http://localhost:8080/api/user/handleGoogleAuthResponseAndlogin', user);
+                // const response = await axios.post('https://genesis-test-platform.herokuapp.com/api/user/handleGoogleAuthResponseAndlogin', user);
 
                 console.log('JWT Token:', response.data.token);
-                console.log('User key:', response.data.userKey);
+                console.log('User key:', response.data.key);
 
                 localStorage.setItem('token', response.data.token);
-                localStorage.setItem('userKey', response.data.userKey);
+                localStorage.setItem('userKey', response.data.key);
 
                 // Clear localStorage
                 localStorage.removeItem('oauth_state');

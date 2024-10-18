@@ -23,7 +23,8 @@ const generateCodeChallenge = (codeVerifier) => {
 
 const Hybrid = () => {
     const redirectToGoogleLogin = () => {
-        const clientId = "339183375939-6ds7pl7hjniud51n77fvmk9lk8cnvd2m.apps.googleusercontent.com";
+        // const clientId = "339183375939-6ds7pl7hjniud51n77fvmk9lk8cnvd2m.apps.googleusercontent.com";
+        const clientId = "461426939988-7av7k2cvkq77d59keov02a6ogvd064i9.apps.googleusercontent.com";
         const redirectUri = "http://localhost:3000/google-auth-callback";  // Redirect URI back to your frontend (React)
 
         // Step 1: Generate code verifier and code challenge for PKCE
